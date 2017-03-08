@@ -1,8 +1,16 @@
 
-convertmd5():
-    return None
+import hashlib
+
+def convertmd5(text):
+    message = hashlib.md5()
+    message.update(text)
+    return message.hexdigest()
 
 
-main():
+def main():
     userinput = raw_input()
-    print (userinput)
+    print convertmd5(userinput)
+
+
+    
+main()
